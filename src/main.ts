@@ -324,9 +324,6 @@ app.innerHTML = `
               ></video>
               
             </div>
-            <div class="about-script-badge">
-              Pure Organic Elixirs
-            </div>
           </div>
 
           <!-- Right: Narrative (Seamlessly Flowing within the Same Sanctuary Suite) -->
@@ -412,7 +409,6 @@ app.innerHTML = `
         <div class="showcase-stage-grid reveal-on-scroll">
           <!-- Left: 3D Animated Frame Container -->
           <div class="showcase-frame-container" id="showcase-frame">
-            <span class="showcase-live-pill">Certified Staff Therapy</span>
             
             <button type="button" class="showcase-nav-btn prev" id="btn-ritual-prev" aria-label="Previous ritual">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
@@ -516,7 +512,6 @@ app.innerHTML = `
           <!-- Card 2: Suite Walkthrough (Cinematic Glowing Screen Video Frame) -->
           <div class="atmosphere-card reveal-on-scroll video-frame">
             <div class="atmosphere-video-screen">
-              <span class="atmosphere-video-badge"><span class="badge-pulse-dot"></span> Suite Reveal &bull; Motion View</span>
               <video
                 src="${facilityDoorVideo}"
                 autoplay

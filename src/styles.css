@@ -41,7 +41,7 @@
   --font-display: 'Cinzel Decorative', 'Bodoni Moda', 'Playfair Display', serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-script: 'Cinzel Decorative', 'Bodoni Moda', serif;
-  --font-cursive: 'Great Vibes', 'Alex Brush', 'Allura', 'Pinyon Script', cursive, serif;
+  --font-cursive: var(--font-heading);
   
   --radius-sm: 8px;
   --radius-md: 16px;
@@ -383,11 +383,18 @@ img {
 }
 
 .hero-title .italic-flair {
-  font-family: var(--font-display);
-  font-style: normal;
-  font-weight: 700;
-  color: var(--color-gold);
-  letter-spacing: 0.04em;
+  font-family: var(--font-heading) !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 1em !important;
+  letter-spacing: -0.015em;
+  display: inline-block;
+  background: linear-gradient(120deg, #E2B544 0%, #FFFFFF 45%, #F5C754 60%, #E2B544 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: luxuryShimmer 7s ease-in-out infinite;
+  text-shadow: 0 0 25px rgba(226, 181, 68, 0.4);
 }
 
 .hero-subtitle {
@@ -2033,11 +2040,11 @@ img {
 
 /* Hero Italic Flair Liquid Gold Shimmer */
 .hero-title .italic-flair {
-  font-family: var(--font-cursive);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.15em;
-  letter-spacing: 0.02em;
+  font-family: var(--font-heading) !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 1em !important;
+  letter-spacing: -0.015em;
   display: inline-block;
   background: linear-gradient(120deg, #E2B544 0%, #FFFFFF 45%, #F5C754 60%, #E2B544 100%);
   background-size: 220% 100%;
@@ -2474,4 +2481,10 @@ img {
   transform: translateY(-8px) scale(1.02);
   border-color: rgba(226, 181, 68, 0.5);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 24px rgba(226, 181, 68, 0.2);
+}
+
+.about-script-badge,
+.showcase-live-pill,
+.atmosphere-video-badge {
+  display: none !important;
 }
