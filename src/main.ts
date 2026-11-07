@@ -192,9 +192,7 @@ app.innerHTML = `
 
       <!-- Far Right: Separated Small "Book Appointment" Button -->
       <div class="nav-right-actions">
-        <button type="button" class="nav-btn-book-small js-open-booking" data-service="General Inquiry">
-          Book Appointment
-        </button>
+        <!-- Header Book Appointment removed per user request -->
         <button type="button" class="nav-hamburger-btn js-toggle-drawer" aria-label="Open mobile menu">
           ${icon('menu')}
         </button>
@@ -227,7 +225,7 @@ app.innerHTML = `
 
   <main>
     <!-- 1. Hero Section (Home) with Fitted Luxury Spa Backdrop -->
-    <section class="hero-section" id="hero">
+    <section class="hero-section" id="hero" style="--hero-bg-url: url('${base}images/hero-sanctuary-bg.jpg');">
       <div class="hero-container-fluid">
         <div class="hero-grid">
           <!-- Hero Left Content (Placed Cleanly with High-Contrast Scrim) -->
@@ -324,9 +322,7 @@ app.innerHTML = `
                 poster="${aboutProductsImage}"
                 preload="auto" class="about-product-video"
               ></video>
-              <div class="about-video-badge">
-                <span class="badge-pulse-dot"></span> Botanical Ritual &bull; Motion View
-              </div>
+              
             </div>
             <div class="about-script-badge">
               Pure Organic Elixirs
@@ -359,11 +355,7 @@ app.innerHTML = `
               </div>
             </div>
 
-            <div class="about-action-row">
-              <a href="#services" class="btn-primary-pill">
-                Explore Our Rituals ${icon('arrow')}
-              </a>
-            </div>
+            
           </div>
         </div>
       </div>
