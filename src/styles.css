@@ -2194,3 +2194,205 @@ img {
     text-shadow: none;
   }
 }
+
+
+/* ==========================================================================
+   LUXURY SERIF EYEBROW TAGLINE (Matching "Relax. Recharge" Font Style)
+   Replaces messy handwriting cursive with clean, high-fashion Didone typography
+   ========================================================================== */
+
+.luxury-serif-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-heading); /* Same font family as Relax. Recharge (Bodoni Moda / Playfair) */
+  font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  margin-bottom: 0.9rem;
+  background: linear-gradient(135deg, #FFF5DF 0%, #F5C754 45%, #E2B544 75%, #D4A028 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.7));
+  animation: eyebrowShimmer 8s ease-in-out infinite alternate;
+}
+
+.eyebrow-sparkle {
+  font-size: 0.85em;
+  color: var(--color-gold-bright);
+  -webkit-text-fill-color: var(--color-gold-bright);
+  animation: sparklePulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes sparklePulse {
+  0% { transform: scale(0.9); opacity: 0.75; }
+  100% { transform: scale(1.15); opacity: 1; filter: drop-shadow(0 0 8px rgba(245, 199, 84, 0.8)); }
+}
+
+@keyframes eyebrowShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Hide legacy cursive watermarks to eliminate clutter */
+.watermark-script-bg {
+  display: none !important;
+}
+
+/* Hero Tagline Slide-in */
+.slide-reveal-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroEyebrowSlide 1s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+}
+
+@keyframes heroEyebrowSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   ABOUT US: POSTER-LIKE BLEND MODE OVERLAY
+   ========================================================================== */
+
+.about-blended-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Giant background typography poster with mix-blend-mode: overlay */
+.about-poster-overlay-bg {
+  position: absolute;
+  top: 50%;
+  right: -2%;
+  transform: translateY(-50%);
+  font-family: var(--font-heading);
+  font-size: clamp(6rem, 16vw, 13rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+  mix-blend-mode: overlay;
+  opacity: 0.16;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  line-height: 0.8;
+  animation: posterFloatGentle 12s ease-in-out infinite alternate;
+}
+
+@keyframes posterFloatGentle {
+  0% { transform: translateY(-50%) scale(1); }
+  100% { transform: translateY(-53%) scale(1.03); }
+}
+
+/* Poster heading with golden liquid shine */
+.about-poster-heading {
+  position: relative;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2.3rem, 4.4vw, 3.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.3rem;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFF3DB 25%, #E2B544 55%, #FFFFFF 85%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: posterHeadingShine 8s ease-in-out infinite alternate;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.8));
+}
+
+@keyframes posterHeadingShine {
+  0% { background-position: 0% 50%; filter: drop-shadow(0 2px 14px rgba(226, 181, 68, 0.25)); }
+  100% { background-position: 100% 50%; filter: drop-shadow(0 4px 26px rgba(226, 181, 68, 0.5)); }
+}
+
+/* ==========================================================================
+   HIGH-IMPACT SLIDING TEXT REVEAL FOR HERO
+   ========================================================================== */
+
+.hero-slide-reveal .slide-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.15em;
+  position: relative;
+}
+
+.hero-slide-reveal .slide-inner {
+  display: inline-block;
+  transform: translateY(115%);
+  opacity: 0;
+  animation: heroMaskSlideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.hero-slide-reveal .slide-line:nth-child(1) .slide-inner {
+  animation-delay: 0.18s;
+}
+
+.hero-slide-reveal .slide-line:nth-child(2) .slide-inner {
+  animation-delay: 0.42s;
+}
+
+@keyframes heroMaskSlideUp {
+  0% {
+    transform: translateY(115%);
+    opacity: 0;
+    filter: blur(6px);
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+/* Animated Golden Sliding Underline Beam */
+.hero-slide-reveal::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  margin-top: 0.8rem;
+  background: linear-gradient(90deg, #F5C754 0%, #BE1536 60%, transparent 100%);
+  box-shadow: 0 0 12px rgba(245, 199, 84, 0.6);
+  animation: heroBeamExpand 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.65s forwards;
+}
+
+@keyframes heroBeamExpand {
+  to {
+    width: 220px;
+  }
+}
+
+/* ==========================================================================
+   PROMINENT SCROLL REVEAL ACROSS ALL PAGES
+   ========================================================================== */
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card.reveal-on-scroll {
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card.reveal-on-scroll.is-revealed:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(226, 181, 68, 0.5);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 24px rgba(226, 181, 68, 0.2);
+}

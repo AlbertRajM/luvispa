@@ -231,8 +231,7 @@ app.innerHTML = `
           <!-- Hero Left Content (Placed Cleanly with High-Contrast Scrim) -->
           <div class="hero-content">
             <div class="luxury-title-wrap">
-              <span class="watermark-script-bg" aria-hidden="true">Sanctuary</span>
-              <span class="luxury-cursive-script">Natural Beauty, A Calmer You</span>
+              <span class="luxury-serif-eyebrow slide-reveal-text"><span class="eyebrow-sparkle">✦</span> Natural Beauty, A Calmer You <span class="eyebrow-sparkle">✦</span></span>
             </div>
             <h1 class="hero-title hero-slide-reveal">
               <span class="slide-line"><span class="slide-inner">Relax. Recharge.</span></span>
@@ -310,8 +309,9 @@ app.innerHTML = `
     <section class="about-section" id="about">
       <div class="section-container">
         <div class="about-blended-card reveal-on-scroll">
-          <!-- Left: Video Visual Window (Integrated, Blended & Watermark-Free) -->
-          <div class="about-visual-panel">
+                    <!-- Left: Video Visual Window (Integrated, Blended & Watermark-Free) -->
+          <div class="about-poster-overlay-bg" aria-hidden="true">SANCTUARY</div>
+          <div class="about-visual-panel reveal-on-scroll">
             <div class="about-media-window video-frame">
               <video
                 src="${aboutProductVideo}"
@@ -332,11 +332,10 @@ app.innerHTML = `
           <!-- Right: Narrative (Seamlessly Flowing within the Same Sanctuary Suite) -->
           <div class="about-story-panel">
             <div class="luxury-title-wrap">
-              <span class="watermark-script-bg" aria-hidden="true">About us</span>
-              <span class="luxury-cursive-script">About us</span>
+              <span class="luxury-serif-eyebrow reveal-on-scroll"><span class="eyebrow-sparkle">✦</span> The Philosophy <span class="eyebrow-sparkle">✦</span></span>
             </div>
             <h2 class="section-title about-poster-heading">A Sanctuary for Body, Mind &amp; Soul</h2>
-            <p class="about-desc">
+            <p class="about-desc reveal-on-scroll">
               We believe true beauty comes from within. Luvi Unisex Saloon &amp; Spa is a peaceful sanctuary where modern wellness meets ancient healing traditions, helping you feel your best inside and out. Every ritual is conducted in private, sanitized suites with gentle aromatics and compassionate care.
             </p>
 
@@ -366,11 +365,10 @@ app.innerHTML = `
       <div class="section-container">
         <div class="section-header-center reveal-on-scroll">
           <div class="luxury-title-wrap center">
-            <span class="watermark-script-bg" aria-hidden="true">Rituals</span>
-            <span class="luxury-cursive-script">Signature Spa Rituals</span>
+            <span class="luxury-serif-eyebrow reveal-on-scroll"><span class="eyebrow-sparkle">✦</span> Signature Spa Rituals <span class="eyebrow-sparkle">✦</span></span>
           </div>
-          <h2 class="section-title">Therapies Crafted for Deep Rest</h2>
-          <p class="section-subtitle">
+          <h2 class="section-title reveal-on-scroll">Therapies Crafted for Deep Rest</h2>
+          <p class="section-subtitle reveal-on-scroll">
             Authentic healing therapies tailored to your body's needs in private, sound-softened suites.
           </p>
         </div>
@@ -403,11 +401,10 @@ app.innerHTML = `
       <div class="section-container">
         <div class="section-header-center reveal-on-scroll">
           <div class="luxury-title-wrap center">
-            <span class="watermark-script-bg" aria-hidden="true">Rituals</span>
-            <span class="luxury-cursive-script">Signature Rituals in Motion</span>
+            <span class="luxury-serif-eyebrow reveal-on-scroll"><span class="eyebrow-sparkle">✦</span> Signature Rituals In Motion <span class="eyebrow-sparkle">✦</span></span>
           </div>
-          <h2 class="section-title">Authentic Wellness in Frame</h2>
-          <p class="section-subtitle">
+          <h2 class="section-title reveal-on-scroll">Authentic Wellness in Frame</h2>
+          <p class="section-subtitle reveal-on-scroll">
             Witness our certified therapists in Luvi uniforms performing time-honored healing therapies in private, sound-softened suites.
           </p>
         </div>
@@ -494,11 +491,10 @@ app.innerHTML = `
       <div class="section-container">
         <div class="section-header-center reveal-on-scroll">
           <div class="luxury-title-wrap center">
-            <span class="watermark-script-bg" aria-hidden="true">Sanctuary</span>
-            <span class="luxury-cursive-script">Horamavu Sanctuary</span>
+            <span class="luxury-serif-eyebrow reveal-on-scroll"><span class="eyebrow-sparkle">✦</span> Horamavu Sanctuary <span class="eyebrow-sparkle">✦</span></span>
           </div>
-          <h2 class="section-title">Step Inside Luvi</h2>
-          <p class="section-subtitle">
+          <h2 class="section-title reveal-on-scroll">Step Inside Luvi</h2>
+          <p class="section-subtitle reveal-on-scroll">
             Warm ambient lighting, sanitized private rooms, and an atmosphere crafted purely for deep rest.
           </p>
         </div>
@@ -822,6 +818,10 @@ startRitualAutoPlay();
 // SCROLL REVEAL & STATS COUNTER ANIMATIONS
 // ==========================================================================
 
+// ==========================================================================
+// SCROLL REVEAL & STATS COUNTER ANIMATIONS
+// ==========================================================================
+
 function initScrollReveal() {
   const revealElements = document.querySelectorAll<HTMLElement>('.reveal-on-scroll');
   if (!revealElements.length) return;
@@ -835,16 +835,22 @@ function initScrollReveal() {
         }
       });
     },
-    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.1, rootMargin: '0px 0px -20px 0px' }
   );
 
   revealElements.forEach((el, index) => {
-    // Add micro-stagger if elements are siblings in a grid
-    if (el.classList.contains('service-card') || el.classList.contains('stat-item') || el.classList.contains('atmosphere-card')) {
-      const delay = (index % 6) * 0.1;
-      el.style.transitionDelay = `${delay}s`;
+    // Check if element is already within viewport on initial load
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+      setTimeout(() => el.classList.add('is-revealed'), index * 80);
+    } else {
+      // Stagger child cards in grids
+      if (el.classList.contains('service-card') || el.classList.contains('atmosphere-card') || el.classList.contains('stat-item')) {
+        const delay = (index % 6) * 0.12;
+        el.style.transitionDelay = `${delay}s`;
+      }
+      revealObserver.observe(el);
     }
-    revealObserver.observe(el);
   });
 }
 
