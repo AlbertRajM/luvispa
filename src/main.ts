@@ -308,8 +308,15 @@ app.innerHTML = `
     <!-- 2. About Us Section (Unified Blended Sanctuary Suite) -->
     <section class="about-section" id="about">
       <div class="section-container">
+        <!-- Top Left Eyebrow -->
+        <div class="about-top-left-header reveal-on-scroll">
+          <div class="luxury-title-wrap">
+            <span class="luxury-serif-eyebrow"><span class="eyebrow-sparkle">✦</span> The Philosophy <span class="eyebrow-sparkle">✦</span></span>
+          </div>
+        </div>
+
         <div class="about-blended-card reveal-on-scroll">
-                    <!-- Left: Video Visual Window (Integrated, Blended & Watermark-Free) -->
+          <!-- Left: Video Visual Window (Integrated, 100% Clean & Visible) -->
           <div class="about-poster-overlay-bg" aria-hidden="true">SANCTUARY</div>
           <div class="about-visual-panel reveal-on-scroll">
             <div class="about-media-window video-frame">
@@ -322,15 +329,11 @@ app.innerHTML = `
                 poster="${aboutProductsImage}"
                 preload="auto" class="about-product-video"
               ></video>
-              
             </div>
           </div>
 
           <!-- Right: Narrative (Seamlessly Flowing within the Same Sanctuary Suite) -->
           <div class="about-story-panel">
-            <div class="luxury-title-wrap">
-              <span class="luxury-serif-eyebrow reveal-on-scroll"><span class="eyebrow-sparkle">✦</span> The Philosophy <span class="eyebrow-sparkle">✦</span></span>
-            </div>
             <h2 class="section-title about-poster-heading">A Sanctuary for Body, Mind &amp; Soul</h2>
             <p class="about-desc reveal-on-scroll">
               We believe true beauty comes from within. Luvi Unisex Saloon &amp; Spa is a peaceful sanctuary where modern wellness meets ancient healing traditions, helping you feel your best inside and out. Every ritual is conducted in private, sanitized suites with gentle aromatics and compassionate care.
