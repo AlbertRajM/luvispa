@@ -67,7 +67,7 @@ const services = [
     tag: 'Heated Basalt',
     title: 'Hot Stone Therapy (Heated Basalt Stones)',
     desc: 'Smooth volcanic basalt stones warmed to soothing temperatures, placed along energy pathways to melt away fatigue and promote deep healing.',
-    image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80',
+    image: `${base}images/service-hot-stone.jpg`,
     badge: 'Deep Warmth',
     iconName: 'hot-stones' as const
   },
@@ -76,7 +76,7 @@ const services = [
     tag: 'Aromatic Healing',
     title: 'Aromatherapy Massage',
     desc: 'Custom-blended cold-pressed essential botanical oils smoothed with rhythmic strokes to calm the nervous system and restore mental tranquility.',
-    image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=800&q=80',
+    image: `${base}images/service-aromatherapy.jpg`,
     badge: 'Pure Botanicals',
     iconName: 'branch' as const
   },
@@ -85,7 +85,7 @@ const services = [
     tag: 'Skin Renewal',
     title: 'Aromatic Mineral Body Scrub',
     desc: 'Pure sea mineral crystals and nourishing botanical elixirs buff away dull surface cells, leaving skin velvety soft, purified, and glowing.',
-    image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80',
+    image: `${base}images/service-body-scrub.jpg`,
     badge: 'Exfoliating Glow',
     iconName: 'herbal-compress' as const
   },
@@ -94,7 +94,7 @@ const services = [
     tag: 'Tension Release',
     title: 'Stress-Relief Head & Scalp Massage',
     desc: 'Focused acupressure across the temples, crown, and neck to soothe digital eye fatigue, alleviate headaches, and induce profound peace.',
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80',
+    image: `${base}images/service-head-scalp.jpg`,
     badge: 'Mental Calm',
     iconName: 'lotus' as const
   },
@@ -103,7 +103,7 @@ const services = [
     tag: 'Whole-Body Balance',
     title: 'Foot Reflexology',
     desc: 'Traditional stimulation of vital reflex zones in the soles and lower legs to balance internal body energy and revitalize tired, aching feet.',
-    image: 'https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?auto=format&fit=crop&w=800&q=80',
+    image: `${base}images/service-foot-reflexology.jpg`,
     badge: 'Acupressure',
     iconName: 'mortar' as const
   }
