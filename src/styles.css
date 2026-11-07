@@ -1791,18 +1791,65 @@ img {
 }
 
 @media (max-width: 900px) {
+  .site-header {
+    padding: 0.6rem 1.25rem 0.9rem;
+  }
   .nav-bar-container {
-    grid-template-columns: auto 1fr auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
   }
   .nav-links-left,
   .nav-links-right {
     display: none;
   }
   .nav-spacer-left {
-    display: none;
+    /* Counter-balance hamburger button so logo is 100% centered with zero gap */
+    display: block;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+  .nav-center-unit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    margin: 0 auto;
+  }
+  .nav-center-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  /* Bigger, prominent, perfectly centered mobile header logo */
+  .nav-brand-logo {
+    height: clamp(60px, 14vw, 72px);
+    max-height: 72px;
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.75));
+    transition: transform 0.3s ease;
+  }
+  .nav-right-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 44px;
+    flex-shrink: 0;
   }
   .nav-hamburger-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    margin: 0;
   }
   .hero-section {
     background-image: 
