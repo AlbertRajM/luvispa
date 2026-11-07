@@ -833,16 +833,15 @@ function initScrollReveal() {
         }
       });
     },
-    { threshold: 0.1, rootMargin: '0px 0px -20px 0px' }
+    { threshold: 0.12, rootMargin: '0px 0px -30px 0px' }
   );
 
   revealElements.forEach((el, index) => {
-    // Check if element is already within viewport on initial load
     const rect = el.getBoundingClientRect();
     if (rect.top < window.innerHeight && rect.bottom >= 0) {
-      setTimeout(() => el.classList.add('is-revealed'), index * 80);
+      // Element is visible on load: trigger with visible staggered entrance
+      setTimeout(() => el.classList.add('is-revealed'), 120 + (index % 5) * 80);
     } else {
-      // Stagger child cards in grids
       if (el.classList.contains('service-card') || el.classList.contains('atmosphere-card') || el.classList.contains('stat-item')) {
         const delay = (index % 6) * 0.12;
         el.style.transitionDelay = `${delay}s`;

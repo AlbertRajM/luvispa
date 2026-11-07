@@ -1829,15 +1829,70 @@ img {
     justify-content: center;
     padding: 0;
   }
-  /* Bigger, prominent, perfectly centered mobile header logo */
+  /* Prominent luxury floating mobile logo: Half in header, half in banner */
+  .site-header {
+    padding: 0.5rem 1.25rem 0.6rem !important;
+    overflow: visible !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+  }
+  .nav-bar-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    position: relative !important;
+    overflow: visible !important;
+  }
+  .nav-spacer-left {
+    display: block !important;
+    width: 44px !important;
+    height: 44px !important;
+    flex-shrink: 0 !important;
+  }
+  .nav-center-unit {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -10%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+    z-index: 1005 !important;
+  }
+  .nav-center-logo {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
   .nav-brand-logo {
-    height: clamp(60px, 14vw, 72px);
-    max-height: 72px;
-    width: auto;
-    object-fit: contain;
-    mix-blend-mode: screen;
-    filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.75));
-    transition: transform 0.3s ease;
+    height: clamp(68px, 16vw, 82px) !important;
+    max-height: 82px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    mix-blend-mode: screen !important;
+    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 14px rgba(226, 181, 68, 0.45)) !important;
+    transition: transform 0.3s ease !important;
+  }
+  .nav-brand-logo:hover {
+    transform: scale(1.05) !important;
+  }
+  .nav-right-actions {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    width: 44px !important;
+    flex-shrink: 0 !important;
+  }
+  .nav-hamburger-btn {
+    position: relative !important;
+    z-index: 1006 !important;
   }
   .nav-right-actions {
     display: flex;
@@ -2514,4 +2569,108 @@ img {
 .about-top-left-header .luxury-title-wrap {
   margin-bottom: 0;
   text-align: left;
+}
+
+/* ==========================================================================
+   DRAMATIC HIGH-IMPACT TEXT ANIMATIONS ACROSS ALL SECTIONS
+   ========================================================================== */
+
+/* 1. Section Eyebrows Tracking Expand & Sparkle */
+.section-header-center .luxury-serif-eyebrow,
+.about-top-left-header .luxury-serif-eyebrow {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  letter-spacing: 0.35em;
+  transition: opacity 0.85s ease 0.08s, 
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.08s, 
+              letter-spacing 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.08s;
+  will-change: transform, opacity, letter-spacing;
+}
+
+.is-revealed .luxury-serif-eyebrow,
+.is-revealed.luxury-serif-eyebrow {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  letter-spacing: 0.18em !important;
+}
+
+/* 2. Section Titles: Blur & Mask Slide-Up */
+.section-title,
+.about-poster-heading {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(8px);
+  transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s, 
+              transform 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s, 
+              filter 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+  will-change: transform, opacity, filter;
+}
+
+.is-revealed .section-title,
+.is-revealed.section-title,
+.is-revealed .about-poster-heading {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  filter: blur(0px) !important;
+}
+
+/* 3. Section Subtitles: Staggered Floating Reveal */
+.section-subtitle,
+.about-desc {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.95s ease 0.38s, 
+              transform 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.38s;
+  will-change: transform, opacity;
+}
+
+.is-revealed .section-subtitle,
+.is-revealed.section-subtitle,
+.is-revealed .about-desc {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* 4. Global Cards & Panels Scroll Reveal */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* 5. Hero Subtitle & CTA Staggered Entrances */
+.hero-subtitle {
+  opacity: 0;
+  animation: heroSubFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+}
+
+.hero-cta-group {
+  opacity: 0;
+  animation: heroSubFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.65s forwards;
+}
+
+.hero-trust-badges {
+  opacity: 0;
+  animation: heroSubFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.85s forwards;
+}
+
+@keyframes heroSubFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
