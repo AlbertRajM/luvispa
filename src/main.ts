@@ -58,7 +58,7 @@ const services = [
     tag: 'Muscle Recovery',
     title: 'Deep Tissue / Deep Muscle Recovery Massage',
     desc: 'Targeted deep neuromuscular pressure to dissolve persistent tension knots, relieve shoulder stiffness, and restore full bodily mobility.',
-    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80',
+    image: `${base}images/service-deep-tissue.jpg`,
     badge: 'Therapeutic Relief',
     iconName: 'hot-stones' as const
   },
