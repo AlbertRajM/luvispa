@@ -1,15 +1,24 @@
 import './styles.css';
 
-const logo = '/brand-logo-transparent.png';
-const headerLogo = '/brand-logo-header-transparent.png';
+const getBaseUrl = () => {
+  const p = typeof window !== 'undefined' ? window.location.pathname : '/';
+  if (p.includes('/luvispa')) {
+    return '/luvispa/';
+  }
+  return p.endsWith('/') ? p : p.substring(0, p.lastIndexOf('/') + 1);
+};
+const base = getBaseUrl();
+
+const logo = `${base}brand-logo-transparent.png`;
+const headerLogo = `${base}brand-logo-header-transparent.png`;
 
 // Spa imagery (Local Luvi facility photos & High-Res curated treatment visuals)
-const aboutProductsImage = '/images/luvi-branded-products.png';
-const aboutProductVideo = '/images/spa-product-animation.mp4';
+const aboutProductsImage = `${base}images/about-organic-products.jpg`;
+const aboutProductVideo = `${base}images/spa-product-animation.mp4`;
 
-const facilityReception = '/images/reception-hero.png';
-const facilityTreatment = '/images/treatment-bed.png';
-const facilityDoorVideo = '/images/wooden-door-opening.mp4';
+const facilityReception = `${base}images/reception-hero.png`;
+const facilityTreatment = `${base}images/treatment-bed.png`;
+const facilityDoorVideo = `${base}images/wooden-door-opening.mp4`;
 
 // Professional, Authentic Luxury Spa Vector Icons
 const icon = (name: 'arrow' | 'phone' | 'mail' | 'whatsapp' | 'whatsapp-official' | 'clock' | 'pin' | 'close' | 'menu' | 'branch' | 'hot-stones' | 'lotus' | 'mortar' | 'care' | 'skincare' | 'herbal-compress') => {
@@ -107,7 +116,7 @@ const signatureRituals = [
     title: 'Ayurvedic Shirodhara Revival',
     tag: 'Mind & Scalp Sanctuary',
     desc: 'An ancient restorative therapy where a rhythmic stream of warm medicated herbal oil is poured gently over the third-eye chakra, releasing chronic mental fatigue and inducing meditative peace.',
-    image: '/images/ritual-shirodhara-3d.jpg',
+    image: `${base}images/ritual-shirodhara-3d.jpg`,
     badge: '3D Pop-Out Frame',
     therapist: 'Certified Ayurvedic Specialist',
     highlights: ['Ajna Chakra Stream', 'Deep Scalp Tension Release', 'Warm Medicated Herbal Oil']
@@ -117,7 +126,7 @@ const signatureRituals = [
     title: 'Volcanic Basalt Stone Therapy',
     tag: 'Deep Thermal Relief',
     desc: 'Hand-selected volcanic basalt stones heated to thermal perfection and placed along energy meridians to dissolve deep muscle spasms, stimulate micro-circulation, and restore vital bodily warmth.',
-    image: '/images/ritual-hot-stone-3d.jpg',
+    image: `${base}images/ritual-hot-stone-3d.jpg`,
     badge: '3D Pop-Out Frame',
     therapist: 'Certified Massage Therapist',
     highlights: ['Heated Basalt Stones', 'Deep Muscular Release', 'Aromatic Oil Nourishment']
@@ -127,7 +136,7 @@ const signatureRituals = [
     title: 'Royal Four-Hands Synchronized Massage',
     tag: 'Dual-Therapist Harmony',
     desc: 'Two certified therapists working in complete synchronized choreography to provide an immersive full-body massage that balances both brain hemispheres and delivers intense restorative relaxation.',
-    image: '/images/ritual-four-hands.jpg',
+    image: `${base}images/ritual-four-hands.jpg`,
     badge: 'Signature Royal Ritual',
     therapist: 'Dual-Therapist Team',
     highlights: ['Choreographed Strokes', 'Full-Body Rebalance', 'Traditional Brass Diyas']
@@ -137,7 +146,7 @@ const signatureRituals = [
     title: 'Traditional Droni Table Ritual',
     tag: 'Authentic Ayurvedic Setup',
     desc: 'Conducted on a traditional handcrafted wooden Droni bed with continuous warm botanical oil infusions, purifying internal energy channels and dissolving deep-seated physical stress.',
-    image: '/images/ritual-shirodhara-droni.jpg',
+    image: `${base}images/ritual-shirodhara-droni.jpg`,
     badge: 'Ayurvedic Droni Suite',
     therapist: 'Holistic Wellness Master',
     highlights: ['Handcrafted Wooden Droni', 'Continuous Warm Infusion', 'Holistic Mind Detox']
@@ -313,7 +322,7 @@ app.innerHTML = `
                 muted
                 playsinline
                 poster="${aboutProductsImage}"
-                class="about-product-video"
+                preload="auto" class="about-product-video"
               ></video>
               <div class="about-video-badge">
                 <span class="badge-pulse-dot"></span> Botanical Ritual &bull; Motion View
@@ -527,7 +536,7 @@ app.innerHTML = `
                 muted
                 playsinline
                 poster="${facilityTreatment}"
-                class="atmosphere-video"
+                preload="auto" class="atmosphere-video"
               ></video>
             </div>
             <div class="atmosphere-caption">
