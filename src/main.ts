@@ -234,9 +234,9 @@ app.innerHTML = `
               <span class="watermark-script-bg" aria-hidden="true">Sanctuary</span>
               <span class="luxury-cursive-script">Natural Beauty, A Calmer You</span>
             </div>
-            <h1 class="hero-title">
-              Relax. Recharge.<br/>
-              <span class="italic-flair">Be You Again.</span>
+            <h1 class="hero-title hero-slide-reveal">
+              <span class="slide-line"><span class="slide-inner">Relax. Recharge.</span></span>
+              <span class="slide-line"><span class="slide-inner italic-flair">Be You Again.</span></span>
             </h1>
             <p class="hero-subtitle">
               Holistic spa & wellness treatments designed to restore balance, renew your energy, and bring out your natural glow right here in Horamavu.
@@ -309,7 +309,7 @@ app.innerHTML = `
     <!-- 2. About Us Section (Unified Blended Sanctuary Suite) -->
     <section class="about-section" id="about">
       <div class="section-container">
-        <div class="about-blended-card">
+        <div class="about-blended-card reveal-on-scroll">
           <!-- Left: Video Visual Window (Integrated, Blended & Watermark-Free) -->
           <div class="about-visual-panel">
             <div class="about-media-window video-frame">
@@ -335,7 +335,7 @@ app.innerHTML = `
               <span class="watermark-script-bg" aria-hidden="true">About us</span>
               <span class="luxury-cursive-script">About us</span>
             </div>
-            <h2 class="section-title">A Sanctuary for Body, Mind &amp; Soul</h2>
+            <h2 class="section-title about-poster-heading">A Sanctuary for Body, Mind &amp; Soul</h2>
             <p class="about-desc">
               We believe true beauty comes from within. Luvi Unisex Saloon &amp; Spa is a peaceful sanctuary where modern wellness meets ancient healing traditions, helping you feel your best inside and out. Every ritual is conducted in private, sanitized suites with gentle aromatics and compassionate care.
             </p>
@@ -364,7 +364,7 @@ app.innerHTML = `
     <!-- 3. Our Services Section (6 Authentic Spa Ritual Cards Matching the Marquee) -->
     <section class="services-section" id="services">
       <div class="section-container">
-        <div class="section-header-center">
+        <div class="section-header-center reveal-on-scroll">
           <div class="luxury-title-wrap center">
             <span class="watermark-script-bg" aria-hidden="true">Rituals</span>
             <span class="luxury-cursive-script">Signature Spa Rituals</span>
@@ -377,7 +377,7 @@ app.innerHTML = `
 
         <div class="services-grid-6">
           ${services.map((item) => `
-            <article class="service-card" id="service-${item.id}">
+            <article class="service-card reveal-on-scroll" id="service-${item.id}">
               <div class="service-card-media">
                 <img src="${item.image}" alt="${item.title}" loading="lazy" />
                 <span class="service-badge-pill">${item.badge}</span>
@@ -401,7 +401,7 @@ app.innerHTML = `
     <!-- 4. Dedicated "Signature Rituals in Motion" Animated Showcase -->
     <section class="rituals-showcase-section" id="rituals">
       <div class="section-container">
-        <div class="section-header-center">
+        <div class="section-header-center reveal-on-scroll">
           <div class="luxury-title-wrap center">
             <span class="watermark-script-bg" aria-hidden="true">Rituals</span>
             <span class="luxury-cursive-script">Signature Rituals in Motion</span>
@@ -412,7 +412,7 @@ app.innerHTML = `
           </p>
         </div>
 
-        <div class="showcase-stage-grid">
+        <div class="showcase-stage-grid reveal-on-scroll">
           <!-- Left: 3D Animated Frame Container -->
           <div class="showcase-frame-container" id="showcase-frame">
             <span class="showcase-live-pill">Certified Staff Therapy</span>
@@ -468,21 +468,21 @@ app.innerHTML = `
     <!-- 5. Stats & Trust Counter Ribbon (Dark Surface & Gold Figures) -->
     <section class="stats-bar-section" aria-label="Key Milestones">
       <div class="section-container">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <div class="stat-number">5K+</div>
+        <div class="stats-grid" id="stats-counter-section">
+          <div class="stat-item reveal-on-scroll">
+            <div class="stat-number js-counter" data-target="5000" data-format="k+" data-val="5K+">0</div>
             <div class="stat-label">Happy Clients</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">10+</div>
+          <div class="stat-item reveal-on-scroll">
+            <div class="stat-number js-counter" data-target="10" data-format="+" data-val="10+">0</div>
             <div class="stat-label">Years Experience</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">20+</div>
+          <div class="stat-item reveal-on-scroll">
+            <div class="stat-number js-counter" data-target="20" data-format="+" data-val="20+">0</div>
             <div class="stat-label">Signature Treatments</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">98%</div>
+          <div class="stat-item reveal-on-scroll">
+            <div class="stat-number js-counter" data-target="98" data-format="%" data-val="98%">0</div>
             <div class="stat-label">Client Satisfaction</div>
           </div>
         </div>
@@ -492,7 +492,7 @@ app.innerHTML = `
     <!-- 5. Atmosphere & Sanctuary Gallery (Luvi Facility Photos) -->
     <section class="atmosphere-section" id="atmosphere">
       <div class="section-container">
-        <div class="section-header-center">
+        <div class="section-header-center reveal-on-scroll">
           <div class="luxury-title-wrap center">
             <span class="watermark-script-bg" aria-hidden="true">Sanctuary</span>
             <span class="luxury-cursive-script">Horamavu Sanctuary</span>
@@ -505,7 +505,7 @@ app.innerHTML = `
 
         <div class="atmosphere-grid-3">
           <!-- Card 1: Reception Desk (Museum-Grade Passe-Partout Photo Frame) -->
-          <div class="atmosphere-card photo-frame">
+          <div class="atmosphere-card reveal-on-scroll photo-frame">
             <div class="atmosphere-photo-mat">
               <div class="atmosphere-img-wrap">
                 <img src="${facilityReception}" alt="Luvi Spa Reception & Welcome Desk" loading="lazy" />
@@ -518,7 +518,7 @@ app.innerHTML = `
           </div>
 
           <!-- Card 2: Suite Walkthrough (Cinematic Glowing Screen Video Frame) -->
-          <div class="atmosphere-card video-frame">
+          <div class="atmosphere-card reveal-on-scroll video-frame">
             <div class="atmosphere-video-screen">
               <span class="atmosphere-video-badge"><span class="badge-pulse-dot"></span> Suite Reveal &bull; Motion View</span>
               <video
@@ -538,7 +538,7 @@ app.innerHTML = `
           </div>
 
           <!-- Card 3: Treatment Bed Suite (Museum-Grade Passe-Partout Photo Frame) -->
-          <div class="atmosphere-card photo-frame">
+          <div class="atmosphere-card reveal-on-scroll photo-frame">
             <div class="atmosphere-photo-mat">
               <div class="atmosphere-img-wrap">
                 <img src="${facilityTreatment}" alt="Private Luvi Treatment Bed" loading="lazy" />
@@ -816,3 +816,100 @@ document.querySelectorAll('.showcase-dot').forEach((dot) => {
 
 // Start initial autoplay (smooth continuous auto-slide)
 startRitualAutoPlay();
+
+
+// ==========================================================================
+// SCROLL REVEAL & STATS COUNTER ANIMATIONS
+// ==========================================================================
+
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll<HTMLElement>('.reveal-on-scroll');
+  if (!revealElements.length) return;
+
+  const revealObserver = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  revealElements.forEach((el, index) => {
+    // Add micro-stagger if elements are siblings in a grid
+    if (el.classList.contains('service-card') || el.classList.contains('stat-item') || el.classList.contains('atmosphere-card')) {
+      const delay = (index % 6) * 0.1;
+      el.style.transitionDelay = `${delay}s`;
+    }
+    revealObserver.observe(el);
+  });
+}
+
+function initStatsCounters() {
+  const counterElements = document.querySelectorAll<HTMLElement>('.js-counter');
+  if (!counterElements.length) return;
+
+  const counterObserver = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          const target = parseFloat(el.getAttribute('data-target') || '0');
+          const format = el.getAttribute('data-format') || '';
+          const finalVal = el.getAttribute('data-val') || `${target}${format}`;
+          const duration = 2200; // 2.2 seconds smooth luxury count
+          const startTime = performance.now();
+
+          const step = (currentTime: number) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Smooth easeOutExpo formula
+            const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+            const current = Math.floor(ease * target);
+
+            if (format === 'k+') {
+              if (progress >= 1) {
+                el.textContent = '5K+';
+              } else {
+                const kFloat = (current / 1000).toFixed(1);
+                el.textContent = `${kFloat.endsWith('.0') ? kFloat.slice(0, -2) : kFloat}K+`;
+              }
+            } else if (format === '+') {
+              el.textContent = progress >= 1 ? finalVal : `${current}+`;
+            } else if (format === '%') {
+              el.textContent = progress >= 1 ? finalVal : `${current}%`;
+            } else {
+              el.textContent = `${current}`;
+            }
+
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              el.classList.add('counter-finished');
+            }
+          };
+
+          requestAnimationFrame(step);
+          obs.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.35 }
+  );
+
+  counterElements.forEach((c) => counterObserver.observe(c));
+}
+
+// Initialize scroll reveal and counter animations
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    initScrollReveal();
+    initStatsCounters();
+  });
+} else {
+  initScrollReveal();
+  initStatsCounters();
+}
